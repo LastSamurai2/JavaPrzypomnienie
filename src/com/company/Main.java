@@ -12,6 +12,12 @@ public class Main {
         dog.feed();
         System.out.println("pies waży " + dog.getWeight());
 
+        Human me = new Human("Kacper","Śliwa");
+        System.out.println(me.getWeight());
+        System.out.println(me.species);
+        System.out.println(me.name);
+
+        Phone nokia = new Phone();
 
     }
 }
