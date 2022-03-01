@@ -21,11 +21,6 @@ public class Animal {
         } else {
             this.weight = DEFAULT_ANIMAL_WEIGHT;
         }
-/*        if ( weight < 0.1){
-            this.alive = false;
-        }else {
-            this.alive = true;
-        }*/
     }
 
     public Double getWeight(){
