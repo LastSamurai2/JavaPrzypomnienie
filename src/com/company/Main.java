@@ -27,11 +27,17 @@ public class Main {
         System.out.println(me.species);
         System.out.println(me.name);
 
-        Car car1 = new Car(2006,"Ford","Mustang","GT500");
+        Car car1 = new Car(2006,"Ford","Mustang","GT500",5000.99);
 
-        me.buyCar(car1);
+        System.out.println("wartość wypłaty " + me.getSalary());
+        me.setSalary(417);
+        System.out.println("wartość wypłaty " + me.getSalary());
+        me.setMyCar(car1);
+        System.out.println(me.getMyCar());
 
         Phone nokia = new Phone(2020,"Nokia","S10");
+
+
 
     }
 }
