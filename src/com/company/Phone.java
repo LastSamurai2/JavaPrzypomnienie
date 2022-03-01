@@ -3,6 +3,9 @@ package com.company;
 public class Phone extends Device{
     Double screenSize;
 
+    Phone (Integer yearOfProduction,String producer,String model){
+        super (yearOfProduction, producer, model);
+    }
 
     @Override
     public void turnOn() {
@@ -11,3 +14,4 @@ public class Phone extends Device{
         System.out.println("widze jabłko");
     }
 }
+

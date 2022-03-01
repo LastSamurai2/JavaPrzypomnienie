@@ -27,7 +27,11 @@ public class Main {
         System.out.println(me.species);
         System.out.println(me.name);
 
-        Phone nokia = new Phone();
+        Car car1 = new Car(2006,"Ford","Mustang","GT500");
+
+        me.buyCar(car1);
+
+        Phone nokia = new Phone(2020,"Nokia","S10");
 
     }
 }
