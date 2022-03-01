@@ -21,6 +21,11 @@ public class Animal {
         } else {
             this.weight = DEFAULT_ANIMAL_WEIGHT;
         }
+/*        if ( weight < 0.1){
+            this.alive = false;
+        }else {
+            this.alive = true;
+        }*/
     }
 
     public Double getWeight(){
@@ -28,7 +33,24 @@ public class Animal {
     }
 
     public void feed(){
-        this.weight += 0.1;
-        System.out.println("thx for food");
+        if (alive.equals(false)){
+            System.out.println("you fed me not enough, I'm died :(");
+        }else{
+            this.weight += 0.1;
+            System.out.println("thx for food");
+        }
     }
+
+    public void takeForWalk(){
+        if ( weight < 0.1 ){
+            this.alive = false;
+        }
+        if (alive.equals(false)){
+            System.out.println("you fed me not enough, I'm died :(");
+        }else{
+            this.weight -= 0.5;
+            System.out.println("thx for walk");
+        }
+    }
+
 }

@@ -9,8 +9,18 @@ public class Main {
         System.out.println("pies waży " + dog.getWeight());
         dog.feed();
         dog.feed();
-        dog.feed();
         System.out.println("pies waży " + dog.getWeight());
+        dog.takeForWalk();
+        dog.takeForWalk();
+        dog.takeForWalk();
+        dog.takeForWalk();
+        dog.takeForWalk();
+        dog.takeForWalk();
+        dog.takeForWalk();
+        dog.takeForWalk();
+        System.out.println("pies waży " + dog.getWeight());
+        dog.feed();
+
 
         Human me = new Human("Kacper","Śliwa");
         System.out.println(me.getWeight());
