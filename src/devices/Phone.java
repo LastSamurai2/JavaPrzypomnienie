@@ -1,7 +1,5 @@
 package devices;
 
-import com.company.Device;
-
 public class Phone extends Device {
     Double screenSize;
 
@@ -16,6 +14,8 @@ public class Phone extends Device {
         System.out.println("czekam");
         System.out.println("widze jabłko");
     }
+
+    @Override
     public String toString(){//overriding the toString() method
         return yearOfProduction+" "+producer+" "+model+" "+screenSize;
     }

@@ -45,6 +45,7 @@ public class Human extends Animal {
         }
 
     }
+    @Override
     public String toString(){//overriding the toString() method
         return species+" "+name+" "+myCar+" "+salary;
     }

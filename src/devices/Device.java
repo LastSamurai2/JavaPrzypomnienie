@@ -1,4 +1,4 @@
-package com.company;
+package devices;
 
 public abstract class  Device {
     protected Integer yearOfProduction;
@@ -9,6 +9,10 @@ public abstract class  Device {
         this.yearOfProduction=yearOfProduction;
         this.producer = producer;
         this.model = model;
+    }
+    @Override
+    public String toString(){//overriding the toString() method
+        return yearOfProduction+" "+producer+" "+model;
     }
 
     abstract  public void turnOn();

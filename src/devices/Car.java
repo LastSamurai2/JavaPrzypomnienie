@@ -1,7 +1,5 @@
 package devices;
 
-import com.company.Device;
-
 public class Car extends Device {
     String engine;
     public Double value;
@@ -30,6 +28,7 @@ public class Car extends Device {
 
     }
 
+    @Override
     public String toString(){//overriding the toString() method
         return yearOfProduction+" "+producer+" "+model+" "+engine+" "+value;
     }
