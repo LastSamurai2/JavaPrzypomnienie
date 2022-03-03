@@ -1,12 +1,12 @@
-package com.company;
+package devices;
 
-import java.util.Objects;
+import com.company.Device;
 
 public class Car extends Device {
     String engine;
-    Double value;
+    public Double value;
 
-    Car(Integer yearOfProduction,String producer,String model,String engine, Double value){
+    public Car(Integer yearOfProduction, String producer, String model, String engine, Double value){
         super(yearOfProduction, producer, model);
         this.engine = engine;
         this.value = value;

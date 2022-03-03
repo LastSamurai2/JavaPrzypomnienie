@@ -1,9 +1,11 @@
-package com.company;
+package devices;
 
-public class Phone extends Device{
+import com.company.Device;
+
+public class Phone extends Device {
     Double screenSize;
 
-    Phone (Integer yearOfProduction,String producer,String model,Double screenSize){
+    public Phone(Integer yearOfProduction, String producer, String model, Double screenSize){
         super (yearOfProduction, producer, model);
         this.screenSize=screenSize;
     }
