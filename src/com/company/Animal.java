@@ -47,5 +47,8 @@ public class Animal {
             System.out.println("thx for walk");
         }
     }
+    public String toString(){//overriding the toString() method
+        return species+" "+name+" "+weight+" "+alive;
+    }
 
 }

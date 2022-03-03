@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Objects;
+
 public class Car extends Device {
     String engine;
     Double value;
@@ -16,4 +18,21 @@ public class Car extends Device {
         System.out.println("Wkładam kluczyk");
         System.out.println("Przekręcam");
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        Car car2 = (Car) obj;
+        return this.yearOfProduction.equals(car2.yearOfProduction) &&
+                this.producer.equals(car2.producer) &&
+                this.model.equals(car2.model) &&
+                this.engine.equals(car2.engine) &&
+                this.value.equals(car2.value);
+
+    }
+
+    public String toString(){//overriding the toString() method
+        return yearOfProduction+" "+producer+" "+model+" "+engine+" "+value;
+    }
+
+
 }
