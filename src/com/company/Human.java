@@ -1,5 +1,6 @@
 package com.company;
 
+import creatures.Animal;
 import devices.Car;
 
 public class Human extends Animal {
@@ -7,7 +8,7 @@ public class Human extends Animal {
     public String firstName;
     public String lastName;
     public Car myCar;
-    protected Animal pet;
+    public Animal pet;
     private double salary;
     public Double cash;
 

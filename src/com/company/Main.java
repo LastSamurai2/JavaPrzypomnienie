@@ -1,17 +1,19 @@
 package com.company;
 
+import creatures.Animal;
+import creatures.Pet;
 import devices.Car;
 import devices.Phone;
 
 public class Main {
 
     public static void main(String[] args) {
-        Animal dog = new Animal("canis","Szarik");
+        Pet dog = new Pet("Szarik","Pies");
 
         System.out.println("pies nazywa sie " + dog.name);
         System.out.println("pies waży " + dog.getWeight());
         dog.feed();
-        dog.feed();
+        dog.feed(5.20);
         System.out.println("pies waży " + dog.getWeight());
         dog.takeForWalk();
         dog.takeForWalk();
@@ -22,7 +24,8 @@ public class Main {
         dog.takeForWalk();
         dog.takeForWalk();
         System.out.println("pies waży " + dog.getWeight());
-        dog.feed();
+
+
 
 
         Human me = new Human("Kacper","Śliwa");

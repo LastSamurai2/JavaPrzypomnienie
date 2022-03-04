@@ -1,16 +1,19 @@
-package com.company;
+package creatures;
 
-public class Animal implements salleable {
+import com.company.Human;
+import com.company.salleable;
+
+public abstract class Animal implements salleable,Feedable {
     private static final Double DEFAULT_DOG_WEIGHT = 3.0;
     private static final Double DEFAULT_CAT_WEIGHT = 1.0;
     private static final Double DEFAULT_ANIMAL_WEIGHT = 2.0;
-    final String species;
+    public final String species;
     public String name;
     Integer age;
     private Double weight;
     private Boolean alive;
 
-    Animal(String species, String name){
+    public Animal(String species, String name){
         this.alive = true;
         this.species = species;
         this.name = name;
@@ -26,7 +29,7 @@ public class Animal implements salleable {
     public Double getWeight(){
         return this.weight;
     }
-
+    @Override
     public void feed(){
         if (alive.equals(false)){
             System.out.println("you fed me not enough, I'm died :(");
@@ -71,6 +74,16 @@ public class Animal implements salleable {
         }
         else{
             System.out.println("nie masz zwierza, nie sprzedasz");
+        }
+    }
+
+    @Override
+    public void feed(Double foodWeight){
+        if (alive.equals(false)){
+            System.out.println("you fed me not enough, I'm died :(");
+        }else{
+            this.weight += foodWeight;
+            System.out.println("thx for food");
         }
     }
 }
