@@ -19,5 +19,6 @@ public class Phone extends Device {
     public String toString(){//overriding the toString() method
         return yearOfProduction+" "+producer+" "+model+" "+screenSize;
     }
+
 }
 

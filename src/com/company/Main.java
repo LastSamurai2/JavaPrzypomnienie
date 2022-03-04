@@ -52,6 +52,23 @@ public class Main {
         System.out.println(dog);
 
 
+        Human murzyn = new Human("Murzyn","Niewolnik");
+
+        me.setPet(murzyn);
+
+        System.out.println(me);
+        Human jan = new Human("Jan","Chytry");
+        jan.cash = 500.12;
+
+        dog.sell(me,jan,400.00);
+        System.out.println(me);
+        System.out.println(jan);
+
+        me.setPet(dog);
+        dog.sell(me,jan,400.00);
+        System.out.println(me);
+        System.out.println(jan);
+
 
     }
 }

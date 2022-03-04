@@ -3,15 +3,19 @@ package com.company;
 import devices.Car;
 
 public class Human extends Animal {
+    private static final Double DEFAULT_HUMAN_CASH = 0.0;
     public String firstName;
     public String lastName;
-    private Car myCar;
+    public Car myCar;
+    protected Animal pet;
     private double salary;
+    public Double cash;
 
     Human(String firstName, String lastName){
         super("homo sapiens",firstName + " " + lastName);
         this.firstName = firstName;
         this.lastName = lastName;
+        this.cash = DEFAULT_HUMAN_CASH;
     }
 
 
@@ -45,9 +49,12 @@ public class Human extends Animal {
         }
 
     }
-    @Override
-    public String toString(){//overriding the toString() method
-        return species+" "+name+" "+myCar+" "+salary;
+    public void setPet(Animal pet) {
+            this.pet = pet;
     }
 
+    @Override
+    public String toString(){//overriding the toString() method
+        return species+" "+name+" "+myCar+" "+salary+" "+pet;
+    }
 }

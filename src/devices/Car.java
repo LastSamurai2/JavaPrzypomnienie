@@ -1,6 +1,9 @@
 package devices;
 
-public class Car extends Device {
+import com.company.Human;
+import com.company.salleable;
+
+public class Car extends Device implements salleable {
     String engine;
     public Double value;
 
@@ -32,6 +35,23 @@ public class Car extends Device {
     public String toString(){//overriding the toString() method
         return yearOfProduction+" "+producer+" "+model+" "+engine+" "+value;
     }
-
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+    if (seller.myCar != null){
+            if(buyer.cash >= price){
+                buyer.cash -= price;
+                seller.cash += price;
+                buyer.myCar = seller.myCar;
+                seller.myCar = null;
+                System.out.println(buyer.name + " kupił od " + seller.name + " auto " + buyer.myCar + " za " + price + " zł");
+                System.out.println(buyer.name + " ma " + buyer.cash + " " + seller.name + " ma " + seller.cash );
+            }else {
+                System.out.println("Nie stać Cię");
+            }
+        }
+        else{
+            System.out.println("nie masz zwierza, nie sprzedasz");
+        }
+    }
 
 }

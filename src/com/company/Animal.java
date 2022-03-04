@@ -1,11 +1,11 @@
 package com.company;
 
-public class Animal {
+public class Animal implements salleable {
     private static final Double DEFAULT_DOG_WEIGHT = 3.0;
     private static final Double DEFAULT_CAT_WEIGHT = 1.0;
     private static final Double DEFAULT_ANIMAL_WEIGHT = 2.0;
     final String species;
-    String name;
+    public String name;
     Integer age;
     private Double weight;
     private Boolean alive;
@@ -52,4 +52,25 @@ public class Animal {
         return species+" "+name+" "+weight+" "+alive;
     }
 
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        if(seller.pet.species == "homo sapiens"){
+            System.out.println("fajnie mieć murzyna ale już nie można w niewolnictwo");
+        }
+        else if (seller.pet != null){
+            if(buyer.cash >= price){
+                buyer.cash -= price;
+                seller.cash += price;
+                buyer.pet = seller.pet;
+                seller.pet = null;
+                System.out.println(buyer.name + " kupił od " + seller.name + " zwierza " + buyer.pet.name + " za " + price + " zł");
+                System.out.println(buyer.name + " ma " + buyer.cash + " " + seller.name + " ma " + seller.cash );
+            }else {
+                System.out.println("Nie stać Cię");
+            }
+        }
+        else{
+            System.out.println("nie masz zwierza, nie sprzedasz");
+        }
+    }
 }
