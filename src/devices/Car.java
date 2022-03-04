@@ -3,7 +3,7 @@ package devices;
 import com.company.Human;
 import com.company.salleable;
 
-public class Car extends Device implements salleable {
+public abstract class Car extends Device implements salleable {
     String engine;
     public Double value;
 
@@ -53,5 +53,5 @@ public class Car extends Device implements salleable {
             System.out.println("nie masz zwierza, nie sprzedasz");
         }
     }
-
+    abstract public void refuel();
 }

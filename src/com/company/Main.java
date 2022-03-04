@@ -2,8 +2,7 @@ package com.company;
 
 import creatures.Animal;
 import creatures.Pet;
-import devices.Car;
-import devices.Phone;
+import devices.*;
 
 public class Main {
 
@@ -33,9 +32,9 @@ public class Main {
         System.out.println(me.species);
         System.out.println(me.name);
 
-        Car car1 = new Car(2006,"Ford","Mustang","GT500",5000.99);
-        Car car2 = new Car(2006,"Ford","Mustang","GT500",5000.99);
-        Car car3 = new Car(2006,"Ford","Mustang","V8",5000.99);
+        Disel car1 = new Disel(2006,"Ford","Mustang","GT500",5000.99);
+        Electric car2 = new Electric(2006,"Ford","Mustang","GT500",5000.99);
+        LPG car3 = new LPG(2006,"Ford","Mustang","V8",5000.99);
 
         System.out.println("Czy auta 1 i 2 są takie same? " + car1.equals(car2));
         System.out.println("Czy auta 2 i 3 są takie same? " + car2.equals(car3));
