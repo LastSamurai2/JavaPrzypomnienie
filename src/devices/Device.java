@@ -1,9 +1,10 @@
 package devices;
 
 public abstract class  Device {
-    protected Integer yearOfProduction;
+    public Integer yearOfProduction;
     protected String producer;
     protected String model;
+    public Double value;
 
     protected Device(Integer yearOfProduction, String producer, String model){
         this.yearOfProduction=yearOfProduction;

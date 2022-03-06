@@ -3,11 +3,15 @@ package com.company;
 import creatures.Animal;
 import devices.Car;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class Human extends Animal {
     private static final Double DEFAULT_HUMAN_CASH = 0.0;
     public String firstName;
     public String lastName;
-    public Car myCar;
+    public Car[] garage;
+    public Integer garageSize;
     public Animal pet;
     private double salary;
     public Double cash;
@@ -16,6 +20,14 @@ public class Human extends Animal {
         super("homo sapiens",firstName + " " + lastName);
         this.firstName = firstName;
         this.lastName = lastName;
+        this.garage = new Car[0];
+        this.cash = DEFAULT_HUMAN_CASH;
+    }
+    Human(String firstName, String lastName,Integer garageSize){
+        super("homo sapiens",firstName + " " + lastName);
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.garage = new Car[garageSize];
         this.cash = DEFAULT_HUMAN_CASH;
     }
 
@@ -35,16 +47,16 @@ public class Human extends Animal {
         }
     }
 
-    public Car getMyCar() {
-        return this.myCar;
+    public Car getMyCar(int garageSpace) {
+        return this.garage[garageSpace];
     }
 
-    public void setMyCar(Car myCar) {
+    public void setMyCar(Car myCar,int garageSpace) {
         if (salary > myCar.value){
-            this.myCar = myCar;
+            garage[garageSpace] = myCar;
         }else if (salary > (myCar.value/12)){
             System.out.println("udało się kupić na kredyt");
-            this.myCar = myCar;
+            garage[garageSpace] = myCar;
         }else {
             System.out.println("znajdź lepszą robote albo idź po podwyżkę biedak jesteś panie");
         }
@@ -56,6 +68,33 @@ public class Human extends Animal {
 
     @Override
     public String toString(){//overriding the toString() method
-        return species+" "+name+" "+myCar+" "+salary+" "+pet;
+        return species+" "+name+" "+garage+" "+salary+" "+pet;
     }
+
+    public  void garageValue(){
+        Double sum = 0.0;
+        for (int i=0; i<garage.length;i++){
+            if (garage[i] != null){
+                Car car= garage[i];
+                sum+=car.value;
+            }
+        }
+        System.out.println("Suma wartości aut w garażu " + sum);
+    }
+    public void sortGarage() {
+        Arrays.sort(garage, new Comparator<Car>() {
+            @Override
+            public int compare(Car o1, Car o2) {
+                if(null == o1) {
+                    return null == o2 ? 0 : 1;
+                }
+                else if(null == o2) {
+                    return -1;
+                }
+                return o1.yearOfProduction.compareTo(o2.yearOfProduction);
+            }
+        });
+        System.out.println(Arrays.asList(garage));
+    }
+
 }

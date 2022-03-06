@@ -27,14 +27,15 @@ public class Main {
 
 
 
-        Human me = new Human("Kacper","Śliwa");
+        Human me = new Human("Kacper","Śliwa",5);
         System.out.println(me.getWeight());
         System.out.println(me.species);
         System.out.println(me.name);
 
         Disel car1 = new Disel(2006,"Ford","Mustang","GT500",5000.99);
         Electric car2 = new Electric(2006,"Ford","Mustang","GT500",5000.99);
-        LPG car3 = new LPG(2006,"Ford","Mustang","V8",5000.99);
+        LPG car3 = new LPG(2004,"Ford","Mustang","V8",5000.99);
+        LPG car4 = new LPG(1998,"Fiat","124","od kosiarki",100.15);
 
         System.out.println("Czy auta 1 i 2 są takie same? " + car1.equals(car2));
         System.out.println("Czy auta 2 i 3 są takie same? " + car2.equals(car3));
@@ -45,8 +46,10 @@ public class Main {
         System.out.println("wartość wypłaty " + me.getSalary());
         me.setSalary(417);
         System.out.println("wartość wypłaty " + me.getSalary());
-        me.setMyCar(car1);
-        System.out.println(me.getMyCar());
+        me.setMyCar(car1,1);
+        me.setMyCar(car3,3);
+        me.setMyCar(car4,2);
+        System.out.println(me.getMyCar(1));
 
         Phone nokia = new Phone(2020,"Nokia","S10",10.00);
         System.out.println(nokia);
@@ -70,7 +73,7 @@ public class Main {
         dog.sell(me,jan,400.00);
         System.out.println(me);
         System.out.println(jan);
-
-
+        me.garageValue();
+        me.sortGarage();
     }
 }

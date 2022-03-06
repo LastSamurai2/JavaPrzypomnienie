@@ -5,7 +5,7 @@ import com.company.salleable;
 
 public abstract class Car extends Device implements salleable {
     String engine;
-    public Double value;
+
 
     public Car(Integer yearOfProduction, String producer, String model, String engine, Double value){
         super(yearOfProduction, producer, model);
@@ -37,7 +37,16 @@ public abstract class Car extends Device implements salleable {
     }
     @Override
     public void sell(Human seller, Human buyer, Double price) {
-    if (seller.myCar != null){
+//        public void sell(Human seller, Human buyer, Double price,int garageSpace)
+        Integer[] freeSpaces;
+        for (int i=0; i<buyer.garage.length;i++){
+            if (buyer.garage[i] != null){
+                Car car= buyer.garage[i];
+
+            }
+        }
+        /*System.out.println("Suma wartości aut w garażu " + sum);
+        if (seller.garage[garageSpace] != null){
             if(buyer.cash >= price){
                 buyer.cash -= price;
                 seller.cash += price;
@@ -51,7 +60,9 @@ public abstract class Car extends Device implements salleable {
         }
         else{
             System.out.println("nie masz zwierza, nie sprzedasz");
-        }
+        }*/
     }
+
     abstract public void refuel();
+
 }
