@@ -36,15 +36,33 @@ public abstract class Car extends Device implements salleable {
         return yearOfProduction+" "+producer+" "+model+" "+engine+" "+value;
     }
     @Override
-    public void sell(Human seller, Human buyer, Double price) {
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+        if (buyer.cash < price){
+            throw new Exception("kupujący to biedak");
+        }
+        if (!seller.hasACar(this)){
+            throw new Exception("sprzedający nie ma auta");
+        }
+        if (!buyer.hasFreeParkingLot()){
+            throw new Exception("nie ma miejsca");
+        }
+
+        buyer.addCar(this);
+        seller.removeCar(this);
+        buyer.cash -= price;
+        seller.cash += price;
+
+        System.out.println("transakcja zakończona");
+
+        }
 //        public void sell(Human seller, Human buyer, Double price,int garageSpace)
-        Integer[] freeSpaces;
+/*        Integer[] freeSpaces;
         for (int i=0; i<buyer.garage.length;i++){
             if (buyer.garage[i] != null){
                 Car car= buyer.garage[i];
 
             }
-        }
+        }*/
         /*System.out.println("Suma wartości aut w garażu " + sum);
         if (seller.garage[garageSpace] != null){
             if(buyer.cash >= price){
@@ -61,7 +79,7 @@ public abstract class Car extends Device implements salleable {
         else{
             System.out.println("nie masz zwierza, nie sprzedasz");
         }*/
-    }
+
 
     abstract public void refuel();
 

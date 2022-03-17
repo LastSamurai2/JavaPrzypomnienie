@@ -6,7 +6,7 @@ import devices.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Pet dog = new Pet("Szarik","Pies");
 
         System.out.println("pies nazywa sie " + dog.name);
@@ -75,5 +75,10 @@ public class Main {
         System.out.println(jan);
         me.garageValue();
         me.sortGarage();
+
+        jan.cash= 600.00;
+
+
+        car1.sell(me,jan,300.00);
     }
 }
