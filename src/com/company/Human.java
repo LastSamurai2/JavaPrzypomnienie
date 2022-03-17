@@ -3,6 +3,7 @@ package com.company;
 import creatures.Animal;
 import devices.Car;
 
+
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -142,5 +143,15 @@ public class Human extends Animal {
             }
         }
     }
+
+    public boolean isItLastCarOwner(Human seller,Car car) {
+        if (seller == car.carOwners.get(car.carOwners.size()-1)) {
+            return true;
+        }
+        return false;
+    }
+//        if (buyer == carOwners.get(carOwners.size()-1)) {
+//            return true;
+//        }
 
 }

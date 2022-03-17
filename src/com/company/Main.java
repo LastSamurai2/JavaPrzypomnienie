@@ -78,7 +78,11 @@ public class Main {
 
         jan.cash= 600.00;
 
-
+        car1.carOwners.add(jan);
+        car1.carOwners.add(me);
+        car1.isItExCarOwner(murzyn);
+        car1.isItSelerAndBuyer(me,jan);
         car1.sell(me,jan,300.00);
+        car1.transactionsNumber();
     }
 }
