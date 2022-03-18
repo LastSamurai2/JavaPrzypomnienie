@@ -12,9 +12,9 @@ public abstract class Car extends Device implements salleable {
 
 
     public Car(Integer yearOfProduction, String producer, String model, String engine, Double value){
-        super(yearOfProduction, producer, model);
+        super(yearOfProduction, producer, model, value);
         this.engine = engine;
-        this.value = value;
+
     }
 
     public void isItExCarOwner(Human seller) {
@@ -88,31 +88,6 @@ public abstract class Car extends Device implements salleable {
         System.out.println("transakcja zakończona");
 
         }
-//        public void sell(Human seller, Human buyer, Double price,int garageSpace)
-/*        Integer[] freeSpaces;
-        for (int i=0; i<buyer.garage.length;i++){
-            if (buyer.garage[i] != null){
-                Car car= buyer.garage[i];
-
-            }
-        }*/
-        /*System.out.println("Suma wartości aut w garażu " + sum);
-        if (seller.garage[garageSpace] != null){
-            if(buyer.cash >= price){
-                buyer.cash -= price;
-                seller.cash += price;
-                buyer.myCar = seller.myCar;
-                seller.myCar = null;
-                System.out.println(buyer.name + " kupił od " + seller.name + " auto " + buyer.myCar + " za " + price + " zł");
-                System.out.println(buyer.name + " ma " + buyer.cash + " " + seller.name + " ma " + seller.cash );
-            }else {
-                System.out.println("Nie stać Cię");
-            }
-        }
-        else{
-            System.out.println("nie masz zwierza, nie sprzedasz");
-        }*/
-
 
     abstract public void refuel();
 

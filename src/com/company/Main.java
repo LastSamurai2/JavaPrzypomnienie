@@ -51,11 +51,11 @@ public class Main {
         me.setMyCar(car4,2);
         System.out.println(me.getMyCar(1));
 
-        Phone nokia = new Phone(2020,"Nokia","S10",10.00);
+        Phone nokia = new Phone(2020,"Nokia","S10",10.00,115.00);
         System.out.println(nokia);
         System.out.println(me);
         System.out.println(dog);
-
+        me.setMyPhone(nokia);
 
         Human murzyn = new Human("Murzyn","Niewolnik");
 
@@ -84,5 +84,24 @@ public class Main {
         car1.isItSelerAndBuyer(me,jan);
         car1.sell(me,jan,300.00);
         car1.transactionsNumber();
+
+        Application app1 = new Application("Uber",1.1,0.0);
+        Application app2 = new Application("PysznePl",1.1,15.0);
+        Application app3 = new Application("Tinder",1.1,0.0);
+        Application app4 = new Application("Spotify",1.1,29.99);
+        Application app5 = new Application("Finebite",1.1,13.15);
+
+        nokia.installAnnApp(app1,me);
+        nokia.installAnnApp(app2,me);
+        nokia.installAnnApp(app3,me);
+        nokia.installAnnApp(app4,me);
+        nokia.installAnnApp(app5,me);
+        nokia.isInstaled(app1);
+        nokia.isInstaled("Uber");
+        nokia.allFreeApps();
+        nokia.appsValue();
+        nokia.sortedAppsListByName();
+        nokia.sortedAppsListByPrice();
+
     }
 }

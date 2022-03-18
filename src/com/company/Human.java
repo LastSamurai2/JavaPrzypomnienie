@@ -2,6 +2,7 @@ package com.company;
 
 import creatures.Animal;
 import devices.Car;
+import devices.Phone;
 
 
 import java.util.Arrays;
@@ -13,6 +14,7 @@ public class Human extends Animal {
     public String firstName;
     public String lastName;
     public Car[] garage;
+    public Phone myPhone;
     public Integer garageSize;
     public Animal pet;
     private double salary;
@@ -65,24 +67,22 @@ public class Human extends Animal {
         }
 
     }
+    public void setMyPhone(Phone phone) {
+        myPhone = phone;
+        System.out.println("mój telefon "+ myPhone);
+    }
 
     public void setPet(Animal pet) {
         this.pet = pet;
     }
 
     @Override
-    public String toString() {//overriding the toString() method
+    public String toString() {
         return species + " " + name + " " + garage + " " + salary + " " + pet;
     }
 
     public double garageValue() {
         Double sum = 0.0;
-/*        for (int i=0; i<garage.length;i++){
-            if (garage[i] != null){
-                Car car= garage[i];
-                sum+=car.value;
-            }
-        }*/
         for (Car car : garage) {
             if (car != null) {
                 sum += car.value;
@@ -150,8 +150,6 @@ public class Human extends Animal {
         }
         return false;
     }
-//        if (buyer == carOwners.get(carOwners.size()-1)) {
-//            return true;
-//        }
+
 
 }
