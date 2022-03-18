@@ -3,10 +3,11 @@ package com.company;
 import creatures.Animal;
 import devices.Car;
 import devices.Phone;
-
-
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.Comparator;
+
 
 public class Human extends Animal {
     private static final Double DEFAULT_HUMAN_CASH = 0.0;
@@ -15,7 +16,8 @@ public class Human extends Animal {
     public String lastName;
     public Car[] garage;
     public Phone myPhone;
-    public Integer garageSize;
+    private LocalDateTime lastChecked;
+    private Double previousSalaryValue;
     public Animal pet;
     private double salary;
     public Double cash;
@@ -38,6 +40,12 @@ public class Human extends Animal {
 
 
     public double getSalary() {
+        if(lastChecked != null){
+            long diff = ChronoUnit.SECONDS.between(lastChecked, LocalDateTime.now());
+            System.out.printf("Twoja wypłata była sprawdzona %d s temu, jej poprzednia wartość to %f", diff, previousSalaryValue);
+        }
+        lastChecked = LocalDateTime.now();
+        previousSalaryValue = salary;
         return salary;
     }
 

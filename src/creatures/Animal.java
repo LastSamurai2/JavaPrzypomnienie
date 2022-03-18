@@ -9,7 +9,6 @@ public abstract class Animal implements salleable,Feedable {
     private static final Double DEFAULT_ANIMAL_WEIGHT = 2.0;
     public final String species;
     public String name;
-    Integer age;
     private Double weight;
     private Boolean alive;
 
@@ -32,10 +31,10 @@ public abstract class Animal implements salleable,Feedable {
     @Override
     public void feed(){
         if (alive.equals(false)){
-            System.out.println("you fed me not enough, I'm died :(");
+            System.out.println("nie karmiłeś mnie odpowiednio, umarłem :(");
         }else{
             this.weight += 0.1;
-            System.out.println("thx for food");
+            System.out.println("dzięki za jedzenie");
         }
     }
 
@@ -80,10 +79,10 @@ public abstract class Animal implements salleable,Feedable {
     @Override
     public void feed(Double foodWeight){
         if (alive.equals(false)){
-            System.out.println("you fed me not enough, I'm died :(");
+            System.out.println("nie karmiłeś mnie odpowiednio, umarłem :(");
         }else{
             this.weight += foodWeight;
-            System.out.println("thx for food");
+            System.out.println("dzięki za jedzenie");
         }
     }
 }

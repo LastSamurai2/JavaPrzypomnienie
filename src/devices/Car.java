@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Car extends Device implements salleable {
-    String engine;
+    private String engine;
     public List<Human> carOwners = new ArrayList<Human>();
 
 

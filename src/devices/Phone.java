@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Phone extends Device {
-    Double screenSize;
+    private Double screenSize;
     public String appName;
     private static final double VERSION=2.1 ;
     private static final String SERVER_ADDRESS = "/my/serwer/address";
