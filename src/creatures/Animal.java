@@ -1,5 +1,4 @@
 package creatures;
-
 import com.company.Human;
 import com.company.salleable;
 
@@ -12,15 +11,27 @@ public abstract class Animal implements salleable,Feedable {
     private Double weight;
     private Boolean alive;
 
+
+
+    public final  FoodType foodType;
+
     public Animal(String species, String name){
         this.alive = true;
         this.species = species;
         this.name = name;
         if (species.equals("canis")){
+            this.foodType = FoodType.ALL;
             this.weight = DEFAULT_DOG_WEIGHT;
         } else if (species.equals("felis")){
+            this.foodType = FoodType.MEET;
             this.weight = DEFAULT_CAT_WEIGHT;
-        } else {
+        }
+        else if (species.equals("cow")){
+            this.foodType = FoodType.CROPS;
+            this.weight = DEFAULT_CAT_WEIGHT;
+        }
+        else {
+            this.foodType = FoodType.ALL;
             this.weight = DEFAULT_ANIMAL_WEIGHT;
         }
     }
@@ -77,10 +88,17 @@ public abstract class Animal implements salleable,Feedable {
     }
 
     @Override
-    public void feed(Double foodWeight){
+    public void feed(Double foodWeight, FoodType foodType){
         if (alive.equals(false)){
             System.out.println("nie karmiłeś mnie odpowiednio, umarłem :(");
         }else{
+            this.weight += foodType.foodBodyRatio * foodWeight;
+//            switch (foodType){
+//                case ALL:this.weight += FoodType.ALL.foodBodyRatio * foodWeight;break;
+//                case MEET:this.weight += FoodType.MEET.foodBodyRatio * foodWeight;break;
+//                case CROPS:this.weight += FoodType.CROPS.foodBodyRatio * foodWeight;break;
+//
+//            }
             this.weight += foodWeight;
             System.out.println("dzięki za jedzenie");
         }

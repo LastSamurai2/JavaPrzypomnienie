@@ -7,4 +7,9 @@ public class Pet extends Animal {
         super(petSpecies,petName );
 
     }
+
+    @Override
+    public void feed(Double foodWeight) {
+
+    }
 }

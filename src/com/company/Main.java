@@ -1,5 +1,7 @@
 package com.company;
 
+import creatures.Animal;
+import creatures.FoodType;
 import creatures.Pet;
 import devices.*;
 
@@ -15,7 +17,7 @@ public class Main {
         System.out.println();
         System.out.println("--------karmienie psa------------------");
         dog.feed();
-        dog.feed(5.20);
+        dog.feed(5.20, FoodType.ALL);
         System.out.println("pies waży " + dog.getWeight());
         System.out.println();
         System.out.println("--------wyprowadzanie na spacer psa------------------");
@@ -135,6 +137,8 @@ public class Main {
         System.out.println("--------Sprawdzenie wypłaty------------------");
         Thread.sleep(5000);
         me.getSalary();
+
+        nokia.operationSystem = Phone.OperationSystem.WINDOWS_MOBILE;
 
     }
 }

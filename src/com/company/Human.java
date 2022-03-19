@@ -1,6 +1,7 @@
 package com.company;
 
 import creatures.Animal;
+import creatures.FoodType;
 import devices.Car;
 import devices.Phone;
 import java.time.LocalDateTime;
@@ -160,4 +161,14 @@ public class Human extends Animal {
     }
 
 
+    @Override
+    public void feed(Double foodWeight) {
+
+    }
+
+
+    @Override
+    public void feed(Double foodWeight, FoodType foodType) {
+
+    }
 }

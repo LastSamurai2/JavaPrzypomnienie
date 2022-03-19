@@ -14,6 +14,11 @@ public class Phone extends Device {
     public String[] appsNames;
     public HashSet<Application> appsList = new HashSet<Application>();
 
+    public enum OperationSystem{
+        ANDROID, WINDOWS_MOBILE, IOS;
+    }
+    public OperationSystem operationSystem;
+
     public Phone(Integer yearOfProduction, String producer, String model, Double screenSize, Double value){
         super (yearOfProduction, producer, model, value);
         this.screenSize=screenSize;

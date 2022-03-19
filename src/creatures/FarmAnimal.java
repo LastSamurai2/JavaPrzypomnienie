@@ -12,4 +12,9 @@ public class FarmAnimal extends Animal implements Edbile {
     public void beEaten() {
         System.out.println("zjedzony");
     }
+
+    @Override
+    public void feed(Double foodWeight) {
+
+    }
 }
