@@ -1,9 +1,6 @@
 package com.company;
 
-import creatures.Animal;
-import creatures.FarmAnimal;
-import creatures.FoodType;
-import creatures.Pet;
+import creatures.*;
 import devices.*;
 
 //import java.awt.List;
@@ -205,6 +202,17 @@ public class Main {
 
         car1.startACar();
         car1.stopACar();
+
+
+        List<Animal> aminals = new LinkedList<>();
+        aminals.sort(new Comparator<Animal>() {
+            @Override
+            public int compare(Animal o1, Animal o2) {
+                return o1.name.compareTo(o2.name);
+            }
+        });
+
+//        aminals.sort(new AnimalsComparator());
 
     }
 }
