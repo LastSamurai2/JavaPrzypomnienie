@@ -46,6 +46,7 @@ public class Main {
         System.out.println(me.name);
         me.getSalary();
 
+
         Disel car1 = new Disel(2006,"Ford","Mustang","GT500",5000.99);
         Electric car2 = new Electric(2006,"Ford","Mustang","GT500",5000.99);
         LPG car3 = new LPG(2004,"Ford","Mustang","V8",5000.99);
@@ -202,6 +203,8 @@ public class Main {
         System.out.println(animalsByFood);
 
 
+        car1.startACar();
+        car1.stopACar();
 
     }
 }

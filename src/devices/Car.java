@@ -2,20 +2,45 @@ package devices;
 
 import com.company.Human;
 import com.company.salleable;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Car extends Device implements salleable {
     private String engine;
+    public Engine engineClas;
     public List<Human> carOwners = new ArrayList<Human>();
-
+    boolean isRunning;
 
     public Car(Integer yearOfProduction, String producer, String model, String engine, Double value){
         super(yearOfProduction, producer, model, value);
         this.engine = engine;
+        this.engineClas = new Engine();
+        this.isRunning = false;
 
     }
+
+    public class Engine{
+        public int horsePower;
+        public int volume;
+        public int milage;
+        public void turnOn(){
+            System.out.println("turnOn silnik");
+            isRunning = true;
+        }
+        public void turnOff(){
+            System.out.println("turnOff silnik");
+            isRunning = false;
+        }
+    }
+
+
+    public void startACar(){
+        engineClas.turnOn();
+    }
+    public void stopACar(){
+        engineClas.turnOff();
+    }
+
 
     public void isItExCarOwner(Human seller) {
             if (carOwners.contains(seller)) {
