@@ -13,7 +13,7 @@ public abstract class Animal implements salleable,Feedable {
     public String name;
     private Double weight;
     private Boolean alive;
-    public List<Animal> animalList = new ArrayList<Animal>();
+;
 
 
     public final  FoodType foodType;
@@ -107,7 +107,4 @@ public abstract class Animal implements salleable,Feedable {
         }
     }
 
-    public void addToAnimalList(Animal animal){
-        animalList.add(animal);
-    }
 }
