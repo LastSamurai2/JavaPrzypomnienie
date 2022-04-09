@@ -1,9 +1,16 @@
 package com.company;
 
 import creatures.Animal;
+import creatures.FarmAnimal;
 import creatures.FoodType;
 import creatures.Pet;
 import devices.*;
+
+//import java.awt.List;
+import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.List;
 
 public class Main {
 
@@ -135,10 +142,66 @@ public class Main {
 
         System.out.println();
         System.out.println("--------Sprawdzenie wypłaty------------------");
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
         me.getSalary();
 
         nokia.operationSystem = Phone.OperationSystem.WINDOWS_MOBILE;
+
+        System.out.println();
+        System.out.println("--------info o kraju------------------");
+        System.out.println(Country.POLAND.gdpInPLN());
+        System.out.println(Country.POLAND.language);
+        System.out.println(Country.POLAND.countryCode);
+
+        System.out.println();
+        System.out.println("--------mapa krajów------------------");
+        Map<String, Country> capitals = new HashMap<>();
+        capitals.put("Warsaw",Country.POLAND);
+        capitals.put("Washington",Country.USA);
+        capitals.put("Berlin",Country.GERMANY);
+        System.out.println(capitals.get("Warsaw"));
+
+
+        TreeMap<String, Country> sortedCountries =new TreeMap<>(capitals);
+        System.out.println(sortedCountries);
+
+
+
+        Map<String, Double> countries = new HashMap<>();
+        countries.put("Poland",10.0);
+        countries.put("Germany",20.0);
+        countries.put("USA",50.0);
+        countries.put("France",30.0);
+        countries.put("Finland",15.0);
+
+        Double min = Collections.min(countries.values());
+        System.out.println(min);
+        Double max = Collections.max(countries.values());
+        System.out.println(max);
+
+        Map<Country, Double> countriasAndArea = new HashMap<>();
+        countriasAndArea.put(Country.POLAND,10.0);
+        countriasAndArea.put(Country.GERMANY,15.0);
+        countriasAndArea.put(Country.USA,50.0);
+
+        FarmAnimal cow = new FarmAnimal("cow");
+        FarmAnimal sheep = new FarmAnimal("dolly");
+
+        List<Animal> omnivorous = new LinkedList<>();
+        omnivorous.add(me);
+        omnivorous.add(dog);
+
+        List<Animal> herbivorous = new LinkedList<>();
+        herbivorous.add(cow);
+        herbivorous.add(sheep);
+
+        Map<FoodType, List<Animal>> animalsByFood = new HashMap<>();
+        animalsByFood.put(FoodType.ALL,omnivorous);
+        animalsByFood.put(FoodType.CROPS,herbivorous);
+
+        System.out.println(animalsByFood);
+
+
 
     }
 }

@@ -2,6 +2,9 @@ package creatures;
 import com.company.Human;
 import com.company.salleable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Animal implements salleable,Feedable {
     private static final Double DEFAULT_DOG_WEIGHT = 3.0;
     private static final Double DEFAULT_CAT_WEIGHT = 1.0;
@@ -10,7 +13,7 @@ public abstract class Animal implements salleable,Feedable {
     public String name;
     private Double weight;
     private Boolean alive;
-
+    public List<Animal> animalList = new ArrayList<Animal>();
 
 
     public final  FoodType foodType;
@@ -102,5 +105,9 @@ public abstract class Animal implements salleable,Feedable {
             this.weight += foodWeight;
             System.out.println("dzięki za jedzenie");
         }
+    }
+
+    public void addToAnimalList(Animal animal){
+        animalList.add(animal);
     }
 }

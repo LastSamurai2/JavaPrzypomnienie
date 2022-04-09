@@ -3,7 +3,7 @@ package creatures;
 public class FarmAnimal extends Animal implements Edbile {
     public String farmAnimalName;
 
-    FarmAnimal(String farmAnimalName){
+    public FarmAnimal(String farmAnimalName){
         super("farm animal",farmAnimalName );
         this.farmAnimalName=farmAnimalName;
     }
