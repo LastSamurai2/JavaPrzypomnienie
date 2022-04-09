@@ -214,5 +214,17 @@ public class Main {
 
 //        aminals.sort(new AnimalsComparator());
 
+        List<Device> devices = new LinkedList<>();
+        devices.add(car1);
+        devices.add(car3);
+        devices.add(nokia);
+        System.out.println(devices);
+        devices.sort(new Comparator<Device>() {
+            @Override
+            public int compare(Device o1, Device o2) {
+                return o1.yearOfProduction.compareTo(o2.yearOfProduction);
+            }
+        });
+        System.out.println(devices);
     }
 }
